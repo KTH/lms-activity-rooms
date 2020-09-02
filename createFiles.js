@@ -3,8 +3,8 @@ require('colors')
 const fs = require('fs')
 const got = require('got')
 const memoize = require('memoizee')
-const JSZip = require('jszip')
-
+const path = require('path')
+const endDate = process.env.END_DATE
 const EXAMINER_ROLE_ID = 10
 const STUDENT_ROLE_ID = 3
 
@@ -23,10 +23,15 @@ const HEADERS = {
     'account_id',
     'status',
     'blueprint_course_id'
-
   ],
 
-  [SECTIONS_FILE]: ['course_id', 'section_id', '"name"', 'status', 'integration_id'],
+  [SECTIONS_FILE]: [
+    'course_id',
+    'section_id',
+    '"name"',
+    'status',
+    'integration_id'
+  ],
 
   [STUDENTS_FILE]: [
     'user_id',
@@ -172,49 +177,19 @@ async function teachersEnrollments (
   }
 }
 
-async function start () {
+async function createFiles () {
+  const startDate = process.env.START_DATE
+  const endDate = process.env.END_DATE
+  const outputFiles = [
+    COURSES_FILE,
+    STUDENTS_FILE,
+    SECTIONS_FILE,
+    TEACHERS_FILE
+  ]
   const baseUrl = process.env.AKTIVITETSTILLFALLEN_API_URL
   const token = process.env.AKTIVITETSTILLFALLEN_API_TOKEN
 
-  const { outputFiles } = await inquirer.prompt({
-    name: 'outputFiles',
-    type: 'checkbox',
-    message: 'Which files do you want to generate?',
-    choices: [
-      { name: 'Course rooms', value: COURSES_FILE },
-      { name: 'Sections', value: SECTIONS_FILE },
-      { name: 'Students enrollments', value: STUDENTS_FILE },
-      { name: 'Teachers (incl. examiners) enrollments', value: TEACHERS_FILE }
-    ],
-    default: []
-  })
-
-  const { startDate, endDate } = await inquirer.prompt([
-    {
-      name: 'startDate',
-      type: 'datetime',
-      message: 'Initial date',
-      format: ['yyyy', '-', 'mm', '-', 'dd'],
-      initial: new Date('2020-08-10')
-    },
-    {
-      name: 'endDate',
-      type: 'datetime',
-      message: 'End date',
-      format: ['yyyy', '-', 'mm', '-', 'dd'],
-      initial: new Date('2020-08-22')
-    }
-  ])
-
-  const useBlueprint = true
-  let blueprintSisId = 'exam_bp_2020_p0' // TODO: set a sis id here
-
-  const { doZip } = await inquirer.prompt({
-    name: 'doZip',
-    type: 'confirm',
-    message: 'Do you want to zip all the files?',
-    default: true
-  })
+  const blueprintSisId = process.env.BLUEPRINT_SIS_ID
 
   for (const file of outputFiles) {
     writeHeader(file)
@@ -224,7 +199,7 @@ async function start () {
   }
 
   for (
-    let date = startDate;
+    let date = new Date(startDate);
     date <= endDate; // eslint-disable-line
     date.setDate(date.getDate() + 1)
   ) {
@@ -257,9 +232,9 @@ async function start () {
         if (
           new Set(examination.aktiviteter.map(akt => akt.courseOwner)).size > 1
         ) {
-          console.log(
-            'More then one school owns this aktivitetstillfälle. Double check this line in the courses csv file before uploading it to Canvas!'
-              .red
+          log.warn(
+            'More then one school owns this aktivitetstillfälle.',
+            akt.red
           )
           console.log(
             'aktivitetstillfälle: ',
@@ -310,23 +285,8 @@ async function start () {
     }
     console.log('Done with one day')
   }
-
-  if (doZip) {
-    const zip = new JSZip()
-    for (const file of outputFiles) {
-      zip.file(file, fs.readFileSync(file))
-    }
-    zip
-      .generateNodeStream({ type: 'nodebuffer', streamFiles: true })
-      .pipe(fs.createWriteStream(ZIP_FILE))
-      .on('finish', function () {
-        console.log(`${ZIP_FILE} written to disk`)
-      })
-  }
 }
 module.exports = {
-  async createZipFile(){
-    console.log('hi!')
-  }
+  createFiles
 }
 // start().catch(e => console.error(e))

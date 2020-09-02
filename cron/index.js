@@ -27,10 +27,9 @@ async function sync () {
 
   await log.child({ req_id: cuid() }, async () => {
     log.info(`Starting sync for period ${START_DATE} to ${END_DATE}`)
-    try{
-      const zipFile = await createFiles.createZipFile()
+    try {
+      const zipFile = await createFiles.createFiles()
       consecutiveFailures = 0
-
     } catch (err) {
       consecutiveFailures++
 
