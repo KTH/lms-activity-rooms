@@ -3,7 +3,7 @@ const log = require('skog')
 const CanvasApi = require('@kth/canvas-api')
 const cuid = require('cuid')
 const createFiles = require('../createFiles')
-
+const path = require('path')
 // "0 5 * * *" = "Every day at 5:00"
 const INTERVAL = process.env.INTERVAL || '0 5 * * *'
 
@@ -28,7 +28,11 @@ async function sync () {
   await log.child({ req_id: cuid() }, async () => {
     log.info(`Starting sync for period ${START_DATE} to ${END_DATE}`)
     try {
-      const zipFile = await createFiles.createFiles()
+      await createFiles.createFiles()
+      log.info(
+        'files created, now send the file ',
+        path.join(process.env.CSV_DIR, createFiles.COURSES_FILE)
+      )
       consecutiveFailures = 0
     } catch (err) {
       consecutiveFailures++
