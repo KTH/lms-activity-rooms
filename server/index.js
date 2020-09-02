@@ -14,13 +14,12 @@ app.get(prefix + '/_monitor', (req, res) => {
       '',
       'INFO:',
       `- Canvas URL: ${process.env.CANVAS_API_URL}`,
-      `- UG URL: ${process.env.UG_URL}`,
       `- Kopps URL: ${process.env.KOPPS_API_URL}`
     ].join('\n')
   )
 })
 
-app.get(prefix + '/about', (req, res) => {
+app.get(prefix + '/_about', (req, res) => {
   res.send('Hello antagna')
 })
 
