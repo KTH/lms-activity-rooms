@@ -19,17 +19,9 @@ process.on('unhandledRejection', (reason, p) => {
   throw reason
 })
 
-require('@kth/reqvars').check()
+// require('@kth/reqvars').check()
 const cron = require('./cron')
 const server = require('./server')
-
-log.info(
-  [
-    `App started with the following env variables (secrets are not shown)`,
-    `CANVAS_API_URL=${process.env.CANVAS_API_URL}`,
-    `KOPPS_API_URL=${process.env.KOPPS_API_URL}`
-  ].join('\n')
-)
 
 log.child({ trigger: 'http' }, () => {
   server.listen(process.env.PORT || 3000, () => {
@@ -37,6 +29,8 @@ log.child({ trigger: 'http' }, () => {
   })
 })
 
+/*
 log.child({ trigger: 'cron' }, () => {
   cron.start()
 })
+*/
