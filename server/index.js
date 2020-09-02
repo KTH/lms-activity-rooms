@@ -1,22 +1,10 @@
 const express = require('express')
 const app = express()
 const prefix = process.env.PROXY_PATH || ''
-const cron = require('../cron')
 
 app.get(prefix + '/_monitor', (req, res) => {
   res.setHeader('Content-Type', 'text/plain')
-  res.send(
-    [
-      'APPLICATION_STATUS: OK',
-      '- NO MONITOR IMPLEMENTED YET',
-      `- Next scheduled synchronization: ${cron.nextSync()}`,
-      cron.isRunning() ? '- Sync is running now' : '',
-      '',
-      'INFO:',
-      `- Canvas URL: ${process.env.CANVAS_API_URL}`,
-      `- Kopps URL: ${process.env.KOPPS_API_URL}`
-    ].join('\n')
-  )
+  res.send('APPLICATION_STATUS: OK')
 })
 
 app.get(prefix + '/_about', (req, res) => {
