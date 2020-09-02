@@ -85,11 +85,17 @@ async function getDetailedCourseInfoWithoutCache (courseCode) {
 const getDetailedCourseInfo = memoize(getDetailedCourseInfoWithoutCache)
 
 function writeHeader (file) {
-  fs.writeFileSync(file, HEADERS[file].join(',') + '\n')
+  fs.writeFileSync(
+    path.join(process.env.CSV_DIR, file),
+    HEADERS[file].join(',') + '\n'
+  )
 }
 
 function writeContent (file, content) {
-  fs.appendFileSync(file, content.join(',') + '\n')
+  fs.appendFileSync(
+    path.join(process.env.CSV_DIR, file),
+    content.join(',') + '\n'
+  )
 }
 
 async function courses (courseSisId, courseName, subAccount, blueprintSisId) {
