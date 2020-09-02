@@ -14,7 +14,7 @@ const STUDENTS_FILE = 'enrollments-students.csv'
 const TEACHERS_FILE = 'enrollments-examiners.csv'
 const MISSING_STUDENTS_FILE = 'students-without-kthid.csv'
 const ZIP_FILE = 'examinations-to-canvas.zip'
-
+const outputFiles = [COURSES_FILE, STUDENTS_FILE, SECTIONS_FILE, TEACHERS_FILE]
 const HEADERS = {
   [COURSES_FILE]: [
     'course_id',
@@ -186,12 +186,6 @@ async function teachersEnrollments (
 async function createFiles () {
   const startDate = process.env.START_DATE
   const endDate = process.env.END_DATE
-  const outputFiles = [
-    COURSES_FILE,
-    STUDENTS_FILE,
-    SECTIONS_FILE,
-    TEACHERS_FILE
-  ]
   const baseUrl = process.env.AKTIVITETSTILLFALLEN_API_URL
   const token = process.env.AKTIVITETSTILLFALLEN_API_TOKEN
 
@@ -289,10 +283,12 @@ async function createFiles () {
         )
       }
     }
-    console.log('Done with one day')
   }
 }
 module.exports = {
-  createFiles
+  createFiles,
+  COURSES_FILE,
+  SECTIONS_FILE,
+  STUDENTS_FILE,
+  TEACHERS_FILE
 }
-// start().catch(e => console.error(e))
