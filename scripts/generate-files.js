@@ -1,6 +1,6 @@
 require('dotenv').config()
 const log = require('skog')
-const { syncActivities } = require('../lib')
+const { writeActivities } = require('../lib')
 
 async function start () {
   log.info('Hello world')
