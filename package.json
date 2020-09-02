@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "colors": "^1.4.0",
+    "nodemon": "^2.0.4",
     "prettier-standard": "^16.3.0"
   }
 }
