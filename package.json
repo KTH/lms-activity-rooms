@@ -16,6 +16,7 @@
     "@kth/canvas-api": "^2.1.2",
     "@kth/reqvars": "^2.0.1",
     "bunyan": "^1.8.14",
+    "cuid": "^2.1.8",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "got": "^10.7.0",
