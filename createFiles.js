@@ -4,8 +4,6 @@ const fs = require('fs')
 const got = require('got')
 const memoize = require('memoizee')
 const JSZip = require('jszip')
-const inquirer = require('inquirer')
-inquirer.registerPrompt('datetime', require('inquirer-datepicker-prompt'))
 
 const EXAMINER_ROLE_ID = 10
 const STUDENT_ROLE_ID = 3
@@ -326,5 +324,9 @@ async function start () {
       })
   }
 }
-
-start().catch(e => console.error(e))
+module.exports = {
+  async createZipFile(){
+    console.log('hi!')
+  }
+}
+// start().catch(e => console.error(e))

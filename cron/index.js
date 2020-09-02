@@ -2,7 +2,7 @@ const { scheduleJob } = require('node-schedule')
 const log = require('skog')
 const CanvasApi = require('@kth/canvas-api')
 const cuid = require('cuid')
-
+const createFiles = require('../createFiles')
 
 // "0 5 * * *" = "Every day at 5:00"
 const INTERVAL = process.env.INTERVAL || '0 5 * * *'
@@ -28,6 +28,7 @@ async function sync () {
   await log.child({ req_id: cuid() }, async () => {
     log.info(`Starting sync for period ${START_DATE} to ${END_DATE}`)
     try{
+      const zipFile = await createFiles.createZipFile()
       consecutiveFailures = 0
 
     } catch (err) {
@@ -41,7 +42,7 @@ async function sync () {
         job.reschedule(FAILURE_INTERVAL)
         log.error(
           err,
-          `Error in sync for period ${PERIOD}. It has failed ${consecutiveFailures} times in a row. Will try again on: ${job.nextInvocation()}`
+          `Error in sync for ${START_DATE}-${END_DATE}. It has failed ${consecutiveFailures} times in a row. Will try again on: ${job.nextInvocation()}`
         )
       }
     }
