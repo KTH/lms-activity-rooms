@@ -20,7 +20,7 @@ process.on('unhandledRejection', (reason, p) => {
 })
 
 // require('@kth/reqvars').check()
-const cron = require('./cron')
+// const cron = require('./cron')
 const server = require('./server')
 
 log.child({ trigger: 'http' }, () => {
