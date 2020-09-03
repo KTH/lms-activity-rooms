@@ -36,11 +36,12 @@ async function sync () {
   running = true
 
   await log.child({ req_id: cuid() }, async () => {
-    log.info(`Starting sync for period ${process.env.START_DATE} to ${process.env.END_DATE}`)
+    log.info(
+      `Starting sync for period ${process.env.START_DATE} to ${process.env.END_DATE}`
+    )
     try {
       await syncActivities(START_DATE, END_DATE)
       consecutiveFailures = 0
-
     } catch (err) {
       consecutiveFailures++
 
