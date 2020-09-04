@@ -1,4 +1,3 @@
-// TODO: should this file remain? Or should we delete it?
 require('dotenv').config()
 const log = require('skog')
 const { writeActivities, syncActivities } = require('../lib')
@@ -17,4 +16,4 @@ async function start2 () {
   await syncActivities(startDate, endDate)
 }
 
-start2()
+start()
