@@ -9,18 +9,10 @@ const INTERVAL = process.env.INTERVAL || '0 5 * * *'
 // "0,30 * * * *" = "Every 30 minutes (at X:00 and X:30)"
 const FAILURE_INTERVAL = '0,30 * * * *'
 
-const START_DATE = new Date(process.env.START_DATE)
-const END_DATE = new Date(process.env.END_DATE)
-
-if (!START_DATE) {
-  log.fatal(`Wrong value for env variable START_DATE: ${START_DATE}`)
-  process.exit()
-}
-
-if (!END_DATE) {
-  log.fatal(`Wrong value for env variable START_DATE: ${END_DATE}`)
-  process.exit()
-}
+const numberOfDays = 30
+const startDate = new Date()
+const endDate = new Date()
+endDate.setDate(startDate.getDate() + numberOfDays)
 
 let job
 let running = false
@@ -36,11 +28,9 @@ async function sync () {
   running = true
 
   await log.child({ req_id: cuid() }, async () => {
-    log.info(
-      `Starting sync for period ${process.env.START_DATE} to ${process.env.END_DATE}`
-    )
+    log.info(`Starting sync for period ${startDate} to ${endDate}`)
     try {
-      await syncActivities(START_DATE, END_DATE)
+      await syncActivities(startDate, endDate)
       consecutiveFailures = 0
     } catch (err) {
       consecutiveFailures++
@@ -53,7 +43,7 @@ async function sync () {
         job.reschedule(FAILURE_INTERVAL)
         log.error(
           err,
-          `Error in sync for ${START_DATE}-${END_DATE}. It has failed ${consecutiveFailures} times in a row. Will try again on: ${job.nextInvocation()}`
+          `Error in sync for ${startDate}-${endDate}. It has failed ${consecutiveFailures} times in a row. Will try again on: ${job.nextInvocation()}`
         )
       }
     }

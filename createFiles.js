@@ -4,7 +4,6 @@ const fs = require('fs')
 const got = require('got')
 const memoize = require('memoizee')
 const path = require('path')
-const endDate = process.env.END_DATE
 const EXAMINER_ROLE_ID = 10
 const STUDENT_ROLE_ID = 3
 
@@ -184,8 +183,8 @@ async function teachersEnrollments (
 }
 
 async function createFiles () {
-  const startDate = process.env.START_DATE
-  const endDate = process.env.END_DATE
+  const startDate = new Date('August 1, 2020 23:15:30')
+  const endDate = new Date('August 30, 2020 23:15:30')
   const baseUrl = process.env.AKTIVITETSTILLFALLEN_API_URL
   const token = process.env.AKTIVITETSTILLFALLEN_API_TOKEN
 

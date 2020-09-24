@@ -4,15 +4,17 @@ const { writeActivities, syncActivities } = require('../lib')
 
 async function start () {
   log.info('Hello world')
-  const startDate = new Date(`${process.env.START_DATE}T00:00:00Z`)
-  const endDate = new Date(`${process.env.END_DATE}T23:59:59Z`)
+  const startDate = new Date('August 1, 2020 23:15:30')
+  const endDate = new Date('August 30, 2020 23:15:30')
+
   await writeActivities(startDate, endDate, '/tmp/activities/')
 }
 
 async function start2 () {
   log.info('Hello world')
-  const startDate = new Date(`${process.env.START_DATE}T00:00:00Z`)
-  const endDate = new Date(`${process.env.END_DATE}T23:59:59Z`)
+  const startDate = new Date('August 1, 2020 23:15:30')
+  const endDate = new Date('August 30, 2020 23:15:30')
+
   await syncActivities(startDate, endDate)
 }
 

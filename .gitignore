@@ -20,8 +20,8 @@ node_modules/*
 *.sublime-workspace
 
 # vim
-.swp
-.swo
+*.swp
+*.swo
 
 
 *.env
