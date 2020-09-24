@@ -9,7 +9,7 @@ const INTERVAL = process.env.INTERVAL || '0 5 * * *'
 // "0,30 * * * *" = "Every 30 minutes (at X:00 and X:30)"
 const FAILURE_INTERVAL = '0,30 * * * *'
 
-const START_DATE = new Date(process.env.START_DATE)
+const START_DATE = new Date()
 const END_DATE = new Date(process.env.END_DATE)
 
 if (!START_DATE) {
