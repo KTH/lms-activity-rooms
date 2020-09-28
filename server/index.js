@@ -2,20 +2,31 @@ const express = require('express')
 const app = express()
 const prefix = process.env.PROXY_PATH || ''
 const cron = require('../cron')
+const canvas = require('../lib/canvas')
 
-app.get(prefix + '/_monitor', (req, res) => {
+app.get(prefix + '/_monitor', async (req, res) => {
+  const canvasStatus = await canvas.test()
+
   res.setHeader('Content-Type', 'text/plain')
-  res.send('APPLICATION_STATUS: OK')
+  res.send([
+    `APPLICATION_STATUS: ${canvasStatus ? 'OK' : 'ERROR'}`,
+    '',
+    `- CANVAS TOKEN: ${canvasStatus ? 'OK' : 'ERROR. Token not valid'}`
+  ].join('\n') + '\n')
 })
 
-app.get(prefix + '/_monitor_all', (req, res) => {
+app.get(prefix + '/_monitor_all', async (req, res) => {
+  const canvasStatus = await canvas.test()
+
   res.send(
     [
       '<html><body><pre>',
-      'APPLICATION_STATUS: OK',
-      '- Next invocation will be (local time in your computer):',
-      `  <script>document.write(new Date(${cron.nextSync().getTime()}))</script>`,
-      cron.isRunning ? '- Sync is running now' : '',
+      `APPLICATION_STATUS: ${canvasStatus ? 'OK' : 'ERROR'}`,
+      `- CANVAS TOKEN: ${canvasStatus ? 'OK' : 'ERROR. Token not valid'}`,
+      '',
+      '- NEXT INVOCATION:',
+      `  <script>document.write(new Date(${cron.nextSync().getTime()}))</script> (local time in your computer)`,
+      `- SYNC IS RUNNING NOW: ${cron.isRunning ? 'YES' : 'NO'}`,
       '',
       'Environment:',
       `- CANVAS_API_URL: ${process.env.CANVAS_API_URL}`,
