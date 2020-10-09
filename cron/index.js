@@ -9,11 +9,6 @@ const INTERVAL = process.env.INTERVAL || '0 5 * * *'
 // "0,30 * * * *" = "Every 30 minutes (at X:00 and X:30)"
 const FAILURE_INTERVAL = '0,30 * * * *'
 
-const numberOfDays = 30
-const startDate = new Date()
-const endDate = new Date()
-endDate.setDate(startDate.getDate() + numberOfDays)
-
 let job
 let running = false
 
@@ -26,6 +21,11 @@ async function sync () {
   }
 
   running = true
+
+  const numberOfDays = 30
+  const startDate = new Date()
+  const endDate = new Date()
+  endDate.setDate(startDate.getDate() + numberOfDays)
 
   await log.child({ req_id: cuid() }, async () => {
     log.info(`Starting sync for period ${startDate} to ${endDate}`)
