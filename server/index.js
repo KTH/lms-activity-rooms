@@ -26,7 +26,7 @@ app.get(prefix + '/_monitor_all', async (req, res) => {
       '',
       '- NEXT INVOCATION:',
       `  <script>document.write(new Date(${cron.nextSync().getTime()}))</script> (local time in your computer)`,
-      `- SYNC IS RUNNING NOW: ${cron.isRunning ? 'YES' : 'NO'}`,
+      `- SYNC IS RUNNING NOW: ${cron.isRunning() ? 'YES' : 'NO'}`,
       '',
       'Environment:',
       `- CANVAS_API_URL: ${process.env.CANVAS_API_URL}`,
