@@ -24,7 +24,6 @@ app.get(prefix + '/_monitor_all', async (req, res) => {
       `APPLICATION_STATUS: ${canvasStatus ? 'OK' : 'ERROR'}`,
       `- CANVAS TOKEN: ${canvasStatus ? 'OK' : 'ERROR. Token not valid'}`,
       '',
-      '- NEXT INVOCATION:',
       `- SYNC IS RUNNING NOW: ${cron.isRunning() ? 'YES' : 'NO'}`,
       '',
       'Environment:',
