@@ -8,13 +8,11 @@ app.get(prefix + '/_monitor', async (req, res) => {
   const canvasStatus = await canvas.test()
 
   res.setHeader('Content-Type', 'text/plain')
-  res.send(
-    [
-      `APPLICATION_STATUS: ${canvasStatus ? 'OK' : 'ERROR'}`,
-      '',
-      `- CANVAS TOKEN: ${canvasStatus ? 'OK' : 'ERROR. Token not valid'}`
-    ].join('\n') + '\n'
-  )
+  res.send([
+    `APPLICATION_STATUS: ${canvasStatus ? 'OK' : 'ERROR'}`,
+    '',
+    `- CANVAS TOKEN: ${canvasStatus ? 'OK' : 'ERROR. Token not valid'}`
+  ].join('\n') + '\n')
 })
 
 app.get(prefix + '/_monitor_all', async (req, res) => {
