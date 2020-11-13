@@ -27,9 +27,6 @@ You can run any `.js` file in the `scripts` directory to execute parts of the ap
 
 ## :rainbow: Contribution guide
 
-The app is divided in the following components (each in one directory):
-
 :bulb: Quick start: run `npx madge app.js --image graph.svg` in the root of this project to get an overview of the internal dependencies.
-
 
 [env-in]: https://github.com/KTH/lms-activity-rooms/blob/master/.env.in
