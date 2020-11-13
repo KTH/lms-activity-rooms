@@ -33,6 +33,7 @@ async function sync () {
       await syncActivities(startDate, endDate)
       consecutiveFailures = 0
     } catch (err) {
+      log.error('An error occured in the sync', err)
       consecutiveFailures++
 
       if (consecutiveFailures > 5) {
