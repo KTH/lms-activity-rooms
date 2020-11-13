@@ -28,8 +28,7 @@ app.get(prefix + '/_monitor_all', async (req, res) => {
       '',
       'Environment:',
       `- CANVAS_API_URL: ${process.env.CANVAS_API_URL}`,
-      `- AKTIVITETSTILLFALLEN_API_URL: ${process.env.AKTIVITETSTILLFALLEN_API_URL}`,
-      `- KOPPS_API_URL: ${process.env.KOPPS_API_URL}`
+      `- AKTIVITETSTILLFALLEN_API_URL: ${process.env.AKTIVITETSTILLFALLEN_API_URL}`
     ].join('\n') + '\n'
   )
 })

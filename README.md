@@ -1,14 +1,32 @@
 # Examination rooms enrollments
 
-This script reads the data from the Aktivitetstillfällen API and creates CSV files to enroll people to examination rooms in Canvas.
+Periodical synchronization of examination rounds (aktivitetstillfälle) to the Canvas LMS.
 
-For examinations (aktivitetstillfälle) with multiple course codes, the first one in alphabetical order will be considered the examination room in Canvas.
+## :wrench: Development mode
 
-## Environment variables
+1.  Copy [the `.env.in` file][env-in] and name it as `.env`
 
-- **AKTIVITETSTILLFALLEN_API_URL**\
-  URL to the aktivitetstillfallen API.
-- **AKTIVITETSTILLFALLEN_API_TOKEN**\
-  Token to access the aktivitetstillfallen API.
-- **KOPPS_API_URL**\
-  URL to the KOPPS API v2.
+    ```sh
+    cp .env.in .env
+    ```
+
+    Open the newly created `.env` and fill it with the required data. This file will be read on startup as environmental variables.
+
+2.  Run `npm run dev` to start the app in development mode
+
+## :rocket: Production
+
+1.  Set the environmental variables as written in [the `.env.in` file][env-in]
+2.  Run `npm start` or `node .` or `node app.js`
+
+_Keep in mind that output logs are in JSON format and could be therefore a bit unreadable without the correct tools._
+
+## :test_tube: Run examples
+
+You can run any `.js` file in the `scripts` directory to execute parts of the application without starting the entire application.
+
+## :rainbow: Contribution guide
+
+:bulb: Quick start: run `npx madge app.js --image graph.svg` in the root of this project to get an overview of the internal dependencies.
+
+[env-in]: https://github.com/KTH/lms-activity-rooms/blob/master/.env.in
