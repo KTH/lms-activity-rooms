@@ -24,8 +24,7 @@
     "got": "^11.6.0",
     "jszip": "^3.5.0",
     "memoizee": "^0.4.14",
-    "skog": "^1.0.0-alpha.1",
-    "tempy": "^0.6.0"
+    "skog": "^1.0.0-alpha.1"
   },
   "devDependencies": {
     "colors": "^1.4.0",
