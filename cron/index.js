@@ -15,11 +15,15 @@ let running = false
 // How many times has the sync failed consecutively
 let consecutiveFailures = 0
 
+// When does the sync started the last time
+let startTime = null
+
 async function sync () {
   if (running) {
     return
   }
 
+  startTime = new Date()
   running = true
 
   const numberOfDays = 60
@@ -57,7 +61,12 @@ function isRunning () {
   return running
 }
 
+function getStartTime () {
+  return startTime
+}
+
 module.exports = {
   start,
-  isRunning
+  isRunning,
+  getStartTime
 }
