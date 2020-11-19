@@ -14,9 +14,9 @@ function checkDuration () {
   const duration = new Date() - cron.getStartTime()
 
   if (duration > limit) {
-    return { ok: false, msg: 'ERROR. App is running for more than one day.' }
+    return { ok: false, msg: `ERROR. Current sync is running for more than one day. Started: ${cron.getStartTime()}` }
   } else {
-    return { ok: true, msg: 'OK. App is running for less than one day.' }
+    return { ok: true, msg: 'OK. Current sync is running for less than one day.' }
   }
 }
 
