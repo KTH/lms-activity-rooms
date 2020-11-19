@@ -22,7 +22,7 @@ async function sync () {
 
   running = true
 
-  const numberOfDays = 30
+  const numberOfDays = 60
   const startDate = new Date()
   const endDate = new Date()
   endDate.setDate(startDate.getDate() + numberOfDays)
