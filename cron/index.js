@@ -34,8 +34,6 @@ const INTERVAL = 60 * 60 * 1000
 // Time to wait until we log an error message
 const TIMEOUT = 24 * 60 * 60 * 1000
 
-let running = false
-
 // How many times has the sync failed consecutively
 let consecutiveFailures = 0
 
@@ -43,12 +41,7 @@ let consecutiveFailures = 0
 let startTime = null
 
 async function sync () {
-  if (running) {
-    return
-  }
-
   startTime = new Date()
-  running = true
 
   const numberOfDays = 60
   const startDate = new Date()
@@ -70,7 +63,6 @@ async function sync () {
       }
     }
   })
-  running = false
 }
 
 async function start () {
@@ -81,16 +73,11 @@ async function start () {
   }
 }
 
-function isRunning () {
-  return running
-}
-
 function getStartTime () {
   return startTime
 }
 
 module.exports = {
   start,
-  isRunning,
   getStartTime
 }
