@@ -2,6 +2,26 @@ const { syncActivities } = require('../lib')
 const log = require('skog')
 const cuid = require('cuid')
 
+/**
+ * Runs a `callback` (async function) and resolves with the value of that
+ * `callback`. If `callback` takes too much to resolve, logs an
+ * error message.
+ *
+ * Note: this function doesn't do anything with `callback`. Its execution will
+ * continue after timeout until it resolves/rejects
+ * @param callback - An async function
+ * @param timeout - Time in milliseconds until an error is logged
+ */
+async function runWithTimeout (callback, ms) {
+  const t = setTimeout(() => {
+    log.error('Synchronization is taking too much… Maybe has hanged?')
+  }, ms)
+
+  const result = await callback()
+  clearTimeout(t)
+  return result
+}
+
 function sleep (t) {
   return new Promise(resolve => {
     setTimeout(resolve, t)
@@ -10,17 +30,18 @@ function sleep (t) {
 
 // Number of milliseconds between runs
 const INTERVAL = 60 * 60 * 1000
-let running = false
+
+// Time to wait until we log an error message
+const TIMEOUT = 24 * 60 * 60 * 1000
 
 // How many times has the sync failed consecutively
 let consecutiveFailures = 0
 
-async function sync () {
-  if (running) {
-    return
-  }
+// When does the sync started the last time
+let startTime = null
 
-  running = true
+async function sync () {
+  startTime = new Date()
 
   const numberOfDays = 60
   const startDate = new Date()
@@ -42,22 +63,21 @@ async function sync () {
       }
     }
   })
-  running = false
 }
 
 async function start () {
   while (true) {
-    await sync()
+    await runWithTimeout(sync, TIMEOUT)
     log.info(`Next invocation: ${new Date(Date.now() + INTERVAL)}`)
     await sleep(INTERVAL)
   }
 }
 
-function isRunning () {
-  return running
+function getStartTime () {
+  return startTime
 }
 
 module.exports = {
   start,
-  isRunning
+  getStartTime
 }
