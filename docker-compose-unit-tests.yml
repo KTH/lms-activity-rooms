@@ -6,7 +6,7 @@ services:
       target: development
     tty: false
     command: >
-      sh -c "npm test:integration"
+      sh -c "npm test"
 
 networks:
   default:
