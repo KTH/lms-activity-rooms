@@ -4,6 +4,8 @@ services:
     build:
       context: .
     tty: false
+    environment:
+      NODE_ENV: development
     command: >
       sh -c "npm test"
 
