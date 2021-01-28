@@ -1,0 +1,9 @@
+version: "3.4"
+services:
+  unit_tests:
+    build:
+      context: .
+      target: development
+    tty: false
+    command: >
+      sh -c "npm test:integration"
