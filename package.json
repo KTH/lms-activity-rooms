@@ -22,7 +22,7 @@
     "cuid": "^2.1.8",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "fast-csv": "^4.3.2",
+    "fast-csv": "^4.3.6",
     "got": "^11.6.0",
     "jszip": "^3.5.0",
     "memoizee": "^0.4.14",
@@ -33,6 +33,6 @@
     "colors": "^1.4.0",
     "nock": "^13.0.7",
     "nodemon": "^2.0.4",
-    "prettier-standard": "^16.3.0"
+    "prettier-standard": "^16.4.1"
   }
 }
