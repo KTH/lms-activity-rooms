@@ -43,6 +43,11 @@ test.before(async t => {
     .query(true)
     .reply(200, JSON.parse(t.context.mock))
     .persist()
+  /** make sure that every computer that runs these tests uses the same
+   * settings
+   */
+  process.env.BLUEPRINT_SIS_ID = 'exam_bp_2020_p0'
+
   /**
    * Running the integration test
    */
