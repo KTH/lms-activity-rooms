@@ -1,0 +1,11 @@
+version: '3.4'
+services:
+  integration_tests:
+    build:
+      context: .
+    tty: false
+    environment:
+      NODE_ENV: development
+      AKTIVITETSTILLFALLEN_API_URL: https://api.kth.se/api/aktivitetstillfallen/v1
+    command: >
+      sh -c "npm run test:integration"

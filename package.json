@@ -7,8 +7,8 @@
     "start": "node .",
     "dev": "NODE_ENV=development nodemon . | bunyan -o short",
     "format": "prettier-standard \"**/*.{js,md,yml,json}\"",
-    "test": "prettier-standard --lint --check \"**/*.{js,md,yml,json}\" && ava",
-    "test:integration": "ava \"test/integration/**/*.js\" -v --timeout=60m",
+    "test": "prettier-standard --lint --check \"**/*.{js,md,yml,json}\"",
+    "test:integration": "ava \"test/integration/**/*.js\" -v --timeout=1m",
     "test:update-snapshots": "npm run test:integration -- --update-snapshots",
     "debug": "NODE_ENV=development node --nolazy --inspect-brk=9229 app.js"
   },
@@ -22,7 +22,7 @@
     "cuid": "^2.1.8",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "fast-csv": "^4.3.2",
+    "fast-csv": "^4.3.6",
     "got": "^11.6.0",
     "jszip": "^3.5.0",
     "memoizee": "^0.4.14",
@@ -31,7 +31,8 @@
   "devDependencies": {
     "ava": "^3.15.0",
     "colors": "^1.4.0",
+    "nock": "^13.0.7",
     "nodemon": "^2.0.4",
-    "prettier-standard": "^16.3.0"
+    "prettier-standard": "^16.4.1"
   }
 }
