@@ -6,6 +6,13 @@ const path = require('path')
 const os = require('os')
 const { writeActivities } = require('../../lib')
 
+const getHeader = fileName => {
+  return fs
+    .readFileSync(fileName, { encoding: 'utf-8' })
+    .split('\n')[0]
+    .split(',')
+}
+
 /**
  * Testing that, given that API responses are as defined this function
  * should successfully write certain files to a certain directory
@@ -27,12 +34,6 @@ test.before(async t => {
       sections: path.resolve(dir, 'lms-activity-rooms.sections.csv'),
       examiners: path.resolve(dir, 'lms-activity-rooms.examiners.csv'),
       students: path.resolve(dir, 'lms-activity-rooms.students.csv')
-    },
-    getHeader: fileName => {
-      return fs
-        .readFileSync(fileName, { encoding: 'utf-8' })
-        .split('\n')[0]
-        .split(',')
     }
   }
   /**
@@ -92,7 +93,7 @@ test('Generating lms-activity-rooms.students.csv', async t => {
  */
 test('Structural integrity of courses files', t => {
   const { courses } = t.context.files
-  t.deepEqual(t.context.getHeader(courses), [
+  t.deepEqual(getHeader(courses), [
     'course_id',
     'short_name',
     'long_name',
@@ -103,7 +104,7 @@ test('Structural integrity of courses files', t => {
 })
 test('Structural integrity of examiners files', t => {
   const { examiners } = t.context.files
-  t.deepEqual(t.context.getHeader(examiners), [
+  t.deepEqual(getHeader(examiners), [
     'section_id',
     'user_id',
     'role_id',
@@ -112,7 +113,7 @@ test('Structural integrity of examiners files', t => {
 })
 test('Structural integrity of sections files', t => {
   const { sections } = t.context.files
-  t.deepEqual(t.context.getHeader(sections), [
+  t.deepEqual(getHeader(sections), [
     'course_id',
     'section_id',
     'name',
@@ -121,7 +122,7 @@ test('Structural integrity of sections files', t => {
 })
 test('Structural integrity of students files', t => {
   const { students } = t.context.files
-  t.deepEqual(t.context.getHeader(students), [
+  t.deepEqual(getHeader(students), [
     'section_id',
     'user_id',
     'role_id',
