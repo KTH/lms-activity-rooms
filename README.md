@@ -1,6 +1,6 @@
 # Examination rooms enrollments
 
-Periodical synchronization of examination rounds (aktivitetstillfälle) to the Canvas LMS.
+Periodical synchronization of examination rounds (aktivitetstillfälle) to the Canvas LMS
 
 ## :wrench: Development mode
 
