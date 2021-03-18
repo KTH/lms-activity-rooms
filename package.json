@@ -9,6 +9,7 @@
     "format": "prettier-standard \"**/*.{js,md,yml,json}\"",
     "test": "prettier-standard --lint --check \"**/*.{js,md,yml,json}\"",
     "test:integration": "ava \"test/integration/**/*.js\" -v --timeout=1m",
+    "test:regression": "ava \"test/regression/**/*.js\" -v --timeout=60m",
     "test:update-snapshots": "npm run test:integration -- --update-snapshots",
     "debug": "NODE_ENV=development node --nolazy --inspect-brk=9229 app.js"
   },
