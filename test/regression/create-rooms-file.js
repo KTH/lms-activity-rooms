@@ -1,4 +1,8 @@
 require('dotenv').config()
+
+// Make sure that the tests pass even if I have minor local differences in the settings
+process.env.BLUEPRINT_SIS_ID = 'exam_bp_2020_p0'
+
 const test = require('ava')
 const { writeActivities } = require('../../lib')
 const fs = require('fs')
