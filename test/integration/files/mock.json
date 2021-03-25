@@ -139,282 +139,270 @@
   ],
   "aktivitetstillfallenraw": [
     {
-      "aktivitetstillfalle": {
-        "Aktiviteter": [
-          {
-            "KursinstansUID": "kursinst-0000-0000-0000-000000000001",
-            "UtbildningsinstansUID": "act00001-0000-0000-0000-000000000000",
-            "link": []
-          }
-        ],
-        "AktivitetstillfallestypID": 135201,
-        "Anmalan": true,
-        "Anmalningsperiod": {
-          "Slutdatum": "2020-09-03",
-          "Startdatum": "2020-08-20",
+      "Aktiviteter": [
+        {
+          "KursinstansUID": "kursinst-0000-0000-0000-000000000001",
+          "UtbildningsinstansUID": "act00001-0000-0000-0000-000000000000",
           "link": []
-        },
-        "Anonymt": false,
-        "AntalAnmalda": 13,
-        "Benamning": {
-          "sv": "Kontrollskrivning",
-          "en": "Midterm-exam"
-        },
-        "Borttagen": false,
-        "Datumperiod": {
-          "Slutdatum": "2020-09-17",
-          "Startdatum": "2020-09-17",
-          "link": []
-        },
-        "Installd": false,
-        "Kopplingar": [
-          {
-            "Aktivitet": {
-              "Avvecklad": false,
-              "Benamning": [
-                {
-                  "Sprakkod": "sv",
-                  "Text": "Kontrollskrivning",
-                  "link": []
-                },
-                {
-                  "Sprakkod": "en",
-                  "Text": "Mid-term Exam",
-                  "link": []
-                }
-              ],
-              "BetygsskalaID": 131656,
-              "GallerUtbildningUtanAngivenOmfattning": false,
-              "KravPaHanvisningTillBeslutshandling": false,
-              "KravPaProjekttitel": false,
-              "OrganisationUID": "org00001-0000-0000-0000-000000000000",
-              "ResultatPaKursVidAttesteringAvModul": false,
-              "Uid": "act00001-0000-0000-0000-000000000000",
-              "UtbildningUID": "utbildni-0000-0000-0000-000000000001",
-              "Utbildningskod": "KON1",
-              "Versionsnummer": 1,
-              "link": [
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/grunddata/betygsskala/131656",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "http://relations.ladok.se/resultat/betygsskala"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/modul/act00001-0000-0000-0000-000000000000",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "self"
-                }
-              ]
-            },
-            "Kursinstans": {
-              "Avvecklad": false,
-              "Benamning": [
-                {
-                  "Sprakkod": "sv",
-                  "Text": "Metal Forming",
-                  "link": []
-                },
-                {
-                  "Sprakkod": "en",
-                  "Text": "Metal Forming",
-                  "link": []
-                }
-              ],
-              "BetygsskalaID": 131657,
-              "Enhet": "HP",
-              "GallerUtbildningUtanAngivenOmfattning": false,
-              "KravPaHanvisningTillBeslutshandling": false,
-              "KravPaProjekttitel": false,
-              "Omfattning": 6,
-              "OrganisationUID": "org00001-0000-0000-0000-000000000000",
-              "ResultatPaKursVidAttesteringAvModul": false,
-              "Uid": "kursinst-0000-0000-0000-000000000001",
-              "UtbildningUID": "kurs0000-0000-0000-0000-000000000001",
-              "Utbildningskod": "AA0000",
-              "Versionsnummer": 3,
-              "link": [
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/kursinstans/kursinst-0000-0000-0000-000000000001",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "self"
-                },
-                {
-                  "method": "POST",
-                  "uri": "https://api.ladok.se:443/studiedeltagande/grupp/utbildning/kurs0000-0000-0000-0000-000000000001",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-studiedeltagande+xml,application/vnd.ladok-studiedeltagande+json",
-                  "rel": "http://relations.ladok.se/studiedeltagande/grupp"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/studiedeltagande/grupp/utbildning/kurs0000-0000-0000-0000-000000000001",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-studiedeltagande+xml,application/vnd.ladok-studiedeltagande+json",
-                  "rel": "http://relations.ladok.se/studiedeltagande/grupp"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/studiedeltagande/utbildningstillfalle/kurstillfalle/utbildning/kurs0000-0000-0000-0000-000000000001",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-studiedeltagande+xml,application/vnd.ladok-studiedeltagande+json",
-                  "rel": "http://relations.ladok.se/studiedeltagande/utbildningstillfalle/kurstillfalle/utbildning"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/kursinst-0000-0000-0000-000000000001/moduler",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "http://relations.ladok.se/resultat/kursinstans/moduler"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/kataloginformation/anvandare/organisation/org00001-0000-0000-0000-000000000000/resultatattestanter",
-                  "mediaType": "application/vnd.ladok+xml,application/vnd.ladok-kataloginformation+xml,application/vnd.ladok-kataloginformation+json",
-                  "rel": "http://relations.ladok.se/kataloginformation/resultatattestanter"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/kataloginformation/anvandare/organisation/org00001-0000-0000-0000-000000000000/resultatrapportorer",
-                  "mediaType": "application/vnd.ladok+xml,application/vnd.ladok-kataloginformation+xml,application/vnd.ladok-kataloginformation+json",
-                  "rel": "http://relations.ladok.se/kataloginformation/resultatrapportorer"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/kataloginformation/anvandare/organisation/org00001-0000-0000-0000-000000000000/allaresultatrapportorer",
-                  "mediaType": "application/vnd.ladok+xml,application/vnd.ladok-kataloginformation+xml,application/vnd.ladok-kataloginformation+json",
-                  "rel": "http://relations.ladok.se/kataloginformation/allaresultatrapportorer"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/kurstillfalle/kursinstans/kursinst-0000-0000-0000-000000000001",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "http://relations.ladok.se/resultat/kurstillfalle/kursinstans"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/grunddata/betygsskala/131657",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "http://relations.ladok.se/resultat/betygsskala"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/resultatuppfoljning/kursinstans/kursinst-0000-0000-0000-000000000001",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "http://relations.ladok.se/resultat/resultatuppfoljning"
-                },
-                {
-                  "method": "PUT",
-                  "uri": "https://api.ladok.se:443/resultat/resultatuppfoljning/resultatuppfoljning/sok",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "http://relations.ladok.se/resultat/resultatuppfoljning/sok"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/utbildning/kurs0000-0000-0000-0000-000000000001/allaversioner",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "http://relations.ladok.se/resultat/utbildningsinstans/allaversioner"
-                },
-                {
-                  "method": "GET",
-                  "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/utbildning/kurs0000-0000-0000-0000-000000000001",
-                  "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-                  "rel": "http://relations.ladok.se/resultat/utbildningsinstans/senaste"
-                }
-              ]
-            },
-            "Kurstillfallen": [
+        }
+      ],
+      "AktivitetstillfallestypBenamning": {
+        "sv": "Kontrollskrivning",
+        "en": "Partial Exam"
+      },
+      "AktivitetstillfallestypID": 135201,
+      "Anmalan": true,
+      "Anmalningsperiod": {
+        "Slutdatum": "2020-09-03",
+        "Startdatum": "2020-08-20",
+        "link": []
+      },
+      "Anonymt": false,
+      "AntalAnmalda": 13,
+      "Benamning": {
+        "sv": "Kontrollskrivning",
+        "en": "Midterm-exam"
+      },
+      "Borttagen": false,
+      "Datumperiod": {
+        "Slutdatum": "2020-09-17",
+        "Startdatum": "2020-09-17",
+        "link": []
+      },
+      "Installd": false,
+      "Kopplingar": [
+        {
+          "Aktivitet": {
+            "Avvecklad": false,
+            "Benamning": [
               {
-                "Slutdatum": "2020-10-23",
-                "Startdatum": "2020-08-24",
-                "StudielokaliseringID": 135195,
-                "StudietaktID": 4,
-                "TillfallesKod": "51238",
-                "Uid": "kurstill-0000-0000-0000-000000000001",
-                "UndervisningsformID": 1,
+                "Sprakkod": "sv",
+                "Text": "Kontrollskrivning",
                 "link": []
               },
               {
-                "Slutdatum": "2019-10-25",
-                "Startdatum": "2019-08-26",
-                "StudielokaliseringID": 135195,
-                "StudietaktID": 4,
-                "TillfallesKod": "50755",
-                "Uid": "kurstill-0000-0000-0000-000000000002",
-                "UndervisningsformID": 1,
+                "Sprakkod": "en",
+                "Text": "Mid-term Exam",
                 "link": []
               }
             ],
-            "link": []
-          }
-        ],
-        "KurstillfalleUIDer": [
-          "kurstill-0000-0000-0000-000000000001",
-          "kurstill-0000-0000-0000-000000000002"
-        ],
-        "Lopnummer": false,
-        "Sluttid": "10:00:00",
-        "Starttid": "08:00:00",
-        "TillatAnmalanForStudentMedGodkantResultat": false,
-        "Uid": "aktitill-0000-0000-0000-000000000001",
-        "VisaInteAnonymkodForStudentenForeAktivitetsTillfalletArGenomfort": false,
-        "link": [
-          {
-            "method": "GET",
-            "uri": "https://api.ladok.se:443/resultat/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001",
-            "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-            "rel": "self"
+            "BetygsskalaID": 131656,
+            "GallerUtbildningUtanAngivenOmfattning": false,
+            "KravPaHanvisningTillBeslutshandling": false,
+            "KravPaProjekttitel": false,
+            "OrganisationUID": "org00001-0000-0000-0000-000000000000",
+            "ResultatPaKursVidAttesteringAvModul": false,
+            "Uid": "act00001-0000-0000-0000-000000000000",
+            "UtbildningUID": "utbildni-0000-0000-0000-000000000001",
+            "Utbildningskod": "KON1",
+            "Versionsnummer": 1,
+            "link": [
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/grunddata/betygsskala/131656",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "http://relations.ladok.se/resultat/betygsskala"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/modul/act00001-0000-0000-0000-000000000000",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "self"
+              }
+            ]
           },
-          {
-            "method": "PUT",
-            "uri": "https://api.ladok.se:443/resultat/studieresultat/rapportera/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001/sok",
-            "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-            "rel": "http://relations.ladok.se/resultat/studieresultatForRapportering/aktivitetstillfalle/sok"
+          "Kursinstans": {
+            "Avvecklad": false,
+            "Benamning": [
+              {
+                "Sprakkod": "sv",
+                "Text": "Metal Forming",
+                "link": []
+              },
+              {
+                "Sprakkod": "en",
+                "Text": "Metal Forming",
+                "link": []
+              }
+            ],
+            "BetygsskalaID": 131657,
+            "Enhet": "HP",
+            "GallerUtbildningUtanAngivenOmfattning": false,
+            "KravPaHanvisningTillBeslutshandling": false,
+            "KravPaProjekttitel": false,
+            "Omfattning": 6,
+            "OrganisationUID": "org00001-0000-0000-0000-000000000000",
+            "ResultatPaKursVidAttesteringAvModul": false,
+            "Uid": "kursinst-0000-0000-0000-000000000001",
+            "UtbildningUID": "kurs0000-0000-0000-0000-000000000001",
+            "Utbildningskod": "AA0000",
+            "Versionsnummer": 3,
+            "link": [
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/kursinstans/kursinst-0000-0000-0000-000000000001",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "self"
+              },
+              {
+                "method": "POST",
+                "uri": "https://api.ladok.se:443/studiedeltagande/grupp/utbildning/kurs0000-0000-0000-0000-000000000001",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-studiedeltagande+xml,application/vnd.ladok-studiedeltagande+json",
+                "rel": "http://relations.ladok.se/studiedeltagande/grupp"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/studiedeltagande/grupp/utbildning/kurs0000-0000-0000-0000-000000000001",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-studiedeltagande+xml,application/vnd.ladok-studiedeltagande+json",
+                "rel": "http://relations.ladok.se/studiedeltagande/grupp"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/studiedeltagande/utbildningstillfalle/kurstillfalle/utbildning/kurs0000-0000-0000-0000-000000000001",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-studiedeltagande+xml,application/vnd.ladok-studiedeltagande+json",
+                "rel": "http://relations.ladok.se/studiedeltagande/utbildningstillfalle/kurstillfalle/utbildning"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/kursinst-0000-0000-0000-000000000001/moduler",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "http://relations.ladok.se/resultat/kursinstans/moduler"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/kataloginformation/anvandare/organisation/org00001-0000-0000-0000-000000000000/resultatattestanter",
+                "mediaType": "application/vnd.ladok+xml,application/vnd.ladok-kataloginformation+xml,application/vnd.ladok-kataloginformation+json",
+                "rel": "http://relations.ladok.se/kataloginformation/resultatattestanter"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/kataloginformation/anvandare/organisation/org00001-0000-0000-0000-000000000000/resultatrapportorer",
+                "mediaType": "application/vnd.ladok+xml,application/vnd.ladok-kataloginformation+xml,application/vnd.ladok-kataloginformation+json",
+                "rel": "http://relations.ladok.se/kataloginformation/resultatrapportorer"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/kataloginformation/anvandare/organisation/org00001-0000-0000-0000-000000000000/allaresultatrapportorer",
+                "mediaType": "application/vnd.ladok+xml,application/vnd.ladok-kataloginformation+xml,application/vnd.ladok-kataloginformation+json",
+                "rel": "http://relations.ladok.se/kataloginformation/allaresultatrapportorer"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/kurstillfalle/kursinstans/kursinst-0000-0000-0000-000000000001",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "http://relations.ladok.se/resultat/kurstillfalle/kursinstans"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/grunddata/betygsskala/131657",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "http://relations.ladok.se/resultat/betygsskala"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/resultatuppfoljning/kursinstans/kursinst-0000-0000-0000-000000000001",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "http://relations.ladok.se/resultat/resultatuppfoljning"
+              },
+              {
+                "method": "PUT",
+                "uri": "https://api.ladok.se:443/resultat/resultatuppfoljning/resultatuppfoljning/sok",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "http://relations.ladok.se/resultat/resultatuppfoljning/sok"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/utbildning/kurs0000-0000-0000-0000-000000000001/allaversioner",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "http://relations.ladok.se/resultat/utbildningsinstans/allaversioner"
+              },
+              {
+                "method": "GET",
+                "uri": "https://api.ladok.se:443/resultat/utbildningsinstans/utbildning/kurs0000-0000-0000-0000-000000000001",
+                "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+                "rel": "http://relations.ladok.se/resultat/utbildningsinstans/senaste"
+              }
+            ]
           },
-          {
-            "method": "PUT",
-            "uri": "https://api.ladok.se:443/resultat/studieresultat/attestera/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001/sok",
-            "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-            "rel": "http://relations.ladok.se/resultat/studieresultatForAttestering/aktivitetstillfalle/sok"
-          },
-          {
-            "method": "GET",
-            "uri": "https://api.ladok.se:443/resultat/kurstillfalle/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001",
-            "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-            "rel": "http://relations.ladok.se/resultat/kurstillfalle"
-          },
-          {
-            "method": "GET",
-            "uri": "https://api.ladok.se:443/resultat/kurstillfalle/aktivitetstillfalle/skafinnasstudenter/aktitill-0000-0000-0000-000000000001",
-            "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-            "rel": "http://relations.ladok.se/resultat/kurstillfalle/aktivitetstillfalle/skafinnasstudenter"
-          },
-          {
-            "method": "GET",
-            "uri": "https://api.ladok.se:443/resultat/grunddata/aktivitetstillfallestyp/135201",
-            "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-            "rel": "http://relations.ladok.se/resultat/aktivitetstillfallestyp"
-          },
-          {
-            "method": "PUT",
-            "uri": "https://api.ladok.se:443/resultat/anvandare/resultatrattighet/attestanter/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001",
-            "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
-            "rel": "http://relations.ladok.se/resultat/anvandare/resultatrattighet/attestanter/aktivitetstillfalle"
-          }
-        ]
-      },
-      "type": {
-        "Benamning": {
-          "sv": "Kontrollskrivning",
-          "en": "Partial Exam"
-        },
-        "Beskrivning": {},
-        "Giltighetsperiod": {
-          "Startdatum": "2018-06-20",
+          "Kurstillfallen": [
+            {
+              "Slutdatum": "2020-10-23",
+              "Startdatum": "2020-08-24",
+              "StudielokaliseringID": 135195,
+              "StudietaktID": 4,
+              "TillfallesKod": "51238",
+              "Uid": "kurstill-0000-0000-0000-000000000001",
+              "UndervisningsformID": 1,
+              "link": []
+            },
+            {
+              "Slutdatum": "2019-10-25",
+              "Startdatum": "2019-08-26",
+              "StudielokaliseringID": 135195,
+              "StudietaktID": 4,
+              "TillfallesKod": "50755",
+              "Uid": "kurstill-0000-0000-0000-000000000002",
+              "UndervisningsformID": 1,
+              "link": []
+            }
+          ],
           "link": []
+        }
+      ],
+      "KurstillfalleUIDer": [
+        "kurstill-0000-0000-0000-000000000001",
+        "kurstill-0000-0000-0000-000000000002"
+      ],
+      "Lopnummer": false,
+      "Sluttid": "10:00:00",
+      "Starttid": "08:00:00",
+      "TillatAnmalanForStudentMedGodkantResultat": false,
+      "Uid": "aktitill-0000-0000-0000-000000000001",
+      "VisaInteAnonymkodForStudentenForeAktivitetsTillfalletArGenomfort": false,
+      "link": [
+        {
+          "method": "GET",
+          "uri": "https://api.ladok.se:443/resultat/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001",
+          "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+          "rel": "self"
         },
-        "ID": "135201",
-        "Kod": "KS",
-        "link": []
-      }
+        {
+          "method": "PUT",
+          "uri": "https://api.ladok.se:443/resultat/studieresultat/rapportera/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001/sok",
+          "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+          "rel": "http://relations.ladok.se/resultat/studieresultatForRapportering/aktivitetstillfalle/sok"
+        },
+        {
+          "method": "PUT",
+          "uri": "https://api.ladok.se:443/resultat/studieresultat/attestera/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001/sok",
+          "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+          "rel": "http://relations.ladok.se/resultat/studieresultatForAttestering/aktivitetstillfalle/sok"
+        },
+        {
+          "method": "GET",
+          "uri": "https://api.ladok.se:443/resultat/kurstillfalle/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001",
+          "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+          "rel": "http://relations.ladok.se/resultat/kurstillfalle"
+        },
+        {
+          "method": "GET",
+          "uri": "https://api.ladok.se:443/resultat/kurstillfalle/aktivitetstillfalle/skafinnasstudenter/aktitill-0000-0000-0000-000000000001",
+          "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+          "rel": "http://relations.ladok.se/resultat/kurstillfalle/aktivitetstillfalle/skafinnasstudenter"
+        },
+        {
+          "method": "GET",
+          "uri": "https://api.ladok.se:443/resultat/grunddata/aktivitetstillfallestyp/135201",
+          "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+          "rel": "http://relations.ladok.se/resultat/aktivitetstillfallestyp"
+        },
+        {
+          "method": "PUT",
+          "uri": "https://api.ladok.se:443/resultat/anvandare/resultatrattighet/attestanter/aktivitetstillfalle/aktitill-0000-0000-0000-000000000001",
+          "mediaType": "application/vnd.ladok+xml,application/json,application/vnd.ladok-resultat+xml,application/vnd.ladok-resultat+json",
+          "rel": "http://relations.ladok.se/resultat/anvandare/resultatrattighet/attestanter/aktivitetstillfalle"
+        }
+      ]
     }
   ]
 }
