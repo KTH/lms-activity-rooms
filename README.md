@@ -21,12 +21,4 @@ Periodical synchronization of examination rounds (aktivitetstillfälle) to the C
 
 _Keep in mind that output logs are in JSON format and could be therefore a bit unreadable without the correct tools._
 
-## :test_tube: Run examples
-
-You can run any `.js` file in the `scripts` directory to execute parts of the application without starting the entire application.
-
-## :rainbow: Contribution guide
-
-:bulb: Quick start: run `npx madge app.js --image graph.svg` in the root of this project to get an overview of the internal dependencies.
-
 [env-in]: https://github.com/KTH/lms-activity-rooms/blob/master/.env.in
