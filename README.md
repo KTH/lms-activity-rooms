@@ -1,4 +1,5 @@
-# Examination rooms enrollments 
+# Examination rooms enrollments
+
 Every aktivitetstillfälle gets an exam room in Canvas LMS.
 
 Periodical synchronization of examination rounds (aktivitetstillfälle) to the Canvas LMS
