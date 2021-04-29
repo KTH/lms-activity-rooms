@@ -24,5 +24,5 @@ test('endDateIfNear SHOULD NOT return a date for activities in the far future', 
   const resultEndDate = functionUnderTest(activity)
 
   // should NOT be a date
-  t.falsy(resultEndDate)
+  t.false(resultEndDate instanceof Date)
 })
