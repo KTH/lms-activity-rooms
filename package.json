@@ -7,7 +7,7 @@
     "start": "node .",
     "dev": "NODE_ENV=development nodemon . | bunyan -o short",
     "format": "prettier-standard \"**/*.{js,md,yml,json}\"",
-    "test": "prettier-standard --lint --check \"**/*.{js,md,yml,json}\" && ava",
+    "test": "prettier-standard --lint --check \"**/*.{js,md,yml,json}\" && ava \"test/unit/**/*.js\" -v",
     "test:integration": "ava \"test/integration/**/*.js\" -v --timeout=1m",
     "test:regression": "ava \"test/regression/**/*.js\" -v --timeout=60m",
     "test:update-snapshots": "npm run test:regression -- --update-snapshots && npm run test:integration -- --update-snapshots",
