@@ -27,6 +27,7 @@
     "got": "^11.6.0",
     "jszip": "^3.5.0",
     "memoizee": "^0.4.14",
+    "rewire": "^5.0.0",
     "skog": "^1.0.0-alpha.1"
   },
   "devDependencies": {
