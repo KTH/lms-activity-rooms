@@ -14,8 +14,6 @@ test('endDateIfNear SHOULD return a date for activities in the near future', t =
 
   // Only check if it actually is a date
   t.true(resultEndDate instanceof Date)
-
-  t.pass()
 })
 
 test('endDateIfNear SHOULD NOT return a date for activities in the far future', t => {
@@ -27,6 +25,4 @@ test('endDateIfNear SHOULD NOT return a date for activities in the far future', 
 
   // should NOT be a date
   t.falsy(resultEndDate)
-
-  t.pass()
 })
