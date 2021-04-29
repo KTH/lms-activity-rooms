@@ -5,7 +5,7 @@ const rewire = require('rewire')
 const lib = rewire('../../lib')
 const functionUnderTest = lib.__get__('endDateIfNear')
 
-test('endDateIfNear should return a date for activities in the near future', t => {
+test('endDateIfNear SHOULD return a date for activities in the near future', t => {
   const examDate = new Date()
   examDate.setDate(examDate.getDate() + 3)
   const activity = { date: examDate }
@@ -17,15 +17,16 @@ test('endDateIfNear should return a date for activities in the near future', t =
 
   t.pass()
 })
-test('endDateIfNear should NOT return a date for activities in the far future', t => {
+
+test('endDateIfNear SHOULD NOT return a date for activities in the far future', t => {
   const examDate = new Date()
   examDate.setDate(examDate.getDate() + 20)
   const activity = { date: examDate }
 
   const resultEndDate = functionUnderTest(activity)
 
-  // should be undefined
-  t.false(resultEndDate)
+  // should NOT be a date
+  t.falsy(resultEndDate)
 
   t.pass()
 })
