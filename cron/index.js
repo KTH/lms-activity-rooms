@@ -43,7 +43,7 @@ let startTime = null
 async function sync () {
   startTime = new Date()
 
-  const numberOfDays = 30
+  const numberOfDays = 60
   const startDate = new Date()
   const endDate = new Date()
   endDate.setDate(startDate.getDate() + numberOfDays)
