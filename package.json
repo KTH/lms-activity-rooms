@@ -6,8 +6,10 @@
   "scripts": {
     "start": "node .",
     "dev": "NODE_ENV=development nodemon . | bunyan -o short",
-    "format": "prettier-standard \"**/*.{js,md,yml,json}\"",
-    "test": "prettier-standard --lint --check \"**/*.{js,md,yml,json}\"",
+    "format": "prettier --write .",
+    "test:lint": "eslint *.js lib scripts cron server test",
+    "test:format": "prettier --check .",
+    "test": "npm run test:lint && npm run test:format",
     "test:integration": "ava \"test/integration/**/*.js\" -v --timeout=1m",
     "test:regression": "ava \"test/regression/**/*.js\" -v --timeout=60m",
     "test:update-snapshots": "npm run test:regression -- --update-snapshots && npm run test:integration -- --update-snapshots",
@@ -30,10 +32,12 @@
     "skog": "^1.0.0-alpha.1"
   },
   "devDependencies": {
+    "@kth/eslint-config-kth": "^1.0.10",
     "ava": "^3.15.0",
     "colors": "^1.4.0",
+    "eslint": "^7.29.0",
     "nock": "^13.0.7",
     "nodemon": "^2.0.4",
-    "prettier-standard": "^16.4.1"
+    "prettier": "^2.3.2"
   }
 }
