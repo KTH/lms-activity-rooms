@@ -11,7 +11,7 @@ jobs:
         shell: bash
         env:
           # Create a file with the build information
-          BUILD_INFORMATION_OUTPUT_FILE: "/buildinfo.js"
+          # BUILD_INFORMATION_OUTPUT_FILE: "/buildinfo.js"
 
           # Builds non main or master branches.
           BRANCHES_SAVE_STARTING_WITH: "origin/"
