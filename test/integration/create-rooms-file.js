@@ -44,7 +44,6 @@ test.before(async (t) => {
   /** make sure that every computer that runs these tests uses the same
    * settings
    */
-  process.env.BLUEPRINT_SIS_ID = "exam_bp_2020_p0";
 
   /**
    * Running the integration test
@@ -96,7 +95,6 @@ test("Structural integrity of courses files", (t) => {
     "long_name",
     "account_id",
     "status",
-    "blueprint_course_id",
     // 'end_date'
   ]);
 });
