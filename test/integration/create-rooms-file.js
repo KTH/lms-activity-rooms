@@ -95,7 +95,7 @@ test("Structural integrity of courses files", (t) => {
     "long_name",
     "account_id",
     "status",
-    'end_date'
+    "end_date",
   ]);
 });
 test("Structural integrity of examiners files", (t) => {
