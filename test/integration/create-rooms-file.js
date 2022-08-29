@@ -95,6 +95,7 @@ test("Structural integrity of courses files", (t) => {
     "long_name",
     "account_id",
     "status",
+    "blueprint_course_id",
     // 'end_date'
   ]);
 });
