@@ -43,15 +43,17 @@ let startTime = null;
 async function sync() {
   startTime = new Date();
 
-  const numberOfDays = 60;
   const startDate = new Date();
-  const endDate = new Date();
-  endDate.setDate(startDate.getDate() + numberOfDays);
+
+  // We create exam rooms for exams in 60 days
+  const numberOfDays = 60;
+  const lastDate = new Date();
+  lastDate.setDate(startDate.getDate() + numberOfDays);
 
   await log.child({ req_id: cuid() }, async () => {
-    log.info(`Starting sync for period ${startDate} to ${endDate}`);
+    log.info(`Starting sync for period ${startDate} to ${lastDate}`);
     try {
-      await syncActivities(startDate, endDate);
+      await syncActivities(startDate, lastDate);
       consecutiveFailures = 0;
     } catch (err) {
       log.error("An error occured in the sync", err);
