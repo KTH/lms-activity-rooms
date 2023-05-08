@@ -1,4 +1,4 @@
-FROM node:12-alpine
+FROM node:18-alpine
 WORKDIR /usr/src/app
 
 # We do this to avoid npm install when we're only changing code
